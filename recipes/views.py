@@ -1,16 +1,8 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.shortcuts import render
 # Create your views here.
 
 
 def home(request):
-    return HttpResponse("Você está na home")
-
-
-def contact(request):
-    return HttpResponse("Você está na página de contato")
-
-
-def about(request):
-    return HttpResponse("Você está na página Sobre")
+    return render(request, 'recipes/pages/home.html', context={
+        "name": "João Castro"
+    })
